@@ -51,7 +51,7 @@ function addItem() {
     const item = document.createElement('img');
     
     item.setAttribute('class', 'dong');
-    item.setAttribute('src', '/ignite.png');
+    item.setAttribute('src', './ignite.png');
     item.style.position = 'absolute';
     item.style.height = '30px';
     item.style.width = '25px';
