@@ -4,16 +4,19 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="main.css">
-    <title>Test</title>
+    <link rel="stylesheet" href="/minigame.css">
+    <title>lol.ps-clone-project</title>
 </head>
-<body>
+<body style="position: relative">
+    <div style="position: absolute">
+        <a href="/">
+            <button>back to home</button>
+        </a>
+    </div>
     <main class="container">
-        <nav-items class="nav">
-            <button class="btn start showing">Start</button>
-            <button class="btn stop none">Stop</button>
-            <div class="clock">00:00:0</div>
-        </nav>
+        <button class="btn start showing">Start</button>
+        <button class="btn stop none">Stop</button>
+        <div class="clock">00:00:0</div>
         <section class="sky">
             <!-- <img class="dong showing" src="dong.png" alt="dong" data-> -->
         </section>
@@ -22,10 +25,11 @@
             <button class="popup_btn">restart?</button>
         </div>
         <section class="ground">
-            <img class="person" src="person.png" alt="person">
+            <img class="person" src="/vayne.png" style="width: 30px; height:30px; border-radius: 6px">
         </section>
     </main>
     <footer class="footer"></footer>
-    <script src="main.js"></script>
+
+<script src="/minigame.js"></script>
 </body>
 </html>

@@ -11,16 +11,6 @@ body {
     width: 500px;
 }
 
-
-.nav {
-    align-items: center;
-    position: absolute;
-    margin: auto; 
-    height: 50px;
-    width: 500px;
-    background-color: skyblue;
-}
-
 .btn {
     cursor: pointer;
     text-align: center;
@@ -32,6 +22,7 @@ body {
     border: none;
     font-size: 16px;
     border-radius: 5px;
+    background-color: #9b7653;
 }
 
 

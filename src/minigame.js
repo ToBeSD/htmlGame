@@ -1,5 +1,4 @@
 const container = document.querySelector('.container');
-const nav = document.querySelector('.nav');
 const start = document.querySelector('.start');
 const stop = document.querySelector('.stop');
 const clock = document.querySelector('.clock');
@@ -52,8 +51,11 @@ function addItem() {
     const item = document.createElement('img');
     
     item.setAttribute('class', 'dong');
-    item.setAttribute('src', 'dong.png');
+    item.setAttribute('src', '/ignite.png');
     item.style.position = 'absolute';
+    item.style.height = '30px';
+    item.style.width = '25px';
+    item.style.borderRadius = '10px';
     let x = randomNumber(x1, x2);
     item.style.left = `${x}px`;
     
@@ -70,8 +72,8 @@ function addItem() {
             item.remove();
         }
         
-        if(item.x <= person.x  && item.x + 26 >= person.x && item.y === person.y ||
-            item.x <= person.x + 14 && item.x + 26 >= person.x + 14 && item.y === person.y) {
+        if(item.x <= person.x  && item.x + 21 >= person.x && item.y === person.y ||
+            item.x <= person.x + 14 && item.x + 21 >= person.x + 14 && item.y === person.y) {
                 gameOver();
                 getPop();
                 return;
@@ -91,7 +93,7 @@ function init() {
     stop.classList.remove(NONE);
     stop.classList.add(SHOW);
     
-    intervalItem = setInterval(addItem,50);
+    intervalItem = setInterval(addItem,100);
     intervalTime = setInterval(getTime,10);
 }
 
@@ -108,14 +110,18 @@ stop.addEventListener('click', () => {
 document.addEventListener('keydown', (event) => human(event));
 
 let personX = 250;
-
+let rotate = 0;
 function human(event) {
     if(event.key === "Right" || event.key === "ArrowRight") {
         personX+=20;
+        rotate += 360;
         person.style.marginLeft = `${personX}px`;
+        person.style.transform = `rotate(${rotate}deg)`;
     }else if(event.key === "Left" || event.key === "ArrowLeft") {
         personX-=20;
-        person.style.marginLeft = `${personX}px`; 
+        rotate -= 360;
+        person.style.marginLeft = `${personX}px`;
+        person.style.transform = `rotate(${rotate}deg)`;
     }
     
     if(personX < 20) {
